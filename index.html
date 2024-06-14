@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Leasing Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="main-container">
+      <h1 class="heading">Car Leasing Calculator</h1>
+      <form id="leasing-form" action="">
+        <div class="left-col">
+          <!-- Car type select box -->
+          <label class="label" for="car-type">Car Type:</label>
+          <select class="select" name="car-type" id="car-type" required>
+            <option value="brand-new">Brand New</option>
+            <option value="used">Used</option>
+          </select>
+          <!-- Car value input and slider -->
+          <label class="label" for="car-value"
+            >Car Value(€10,000 - €200,000):</label
+          >
+          <input
+            class="input"
+            type="text"
+            name="car-value"
+            id="car-value-input"
+            value="15000"
+            required
+            pattern="\d+"
+          />
+          <span id="car-value-error" class="error-message"></span>
+          <input
+            type="range"
+            min="10000"
+            max="200000"
+            value="25000"
+            id="car-value-slider"
+            class="slider"
+          />
+        </div>
+        <div class="right-col">
+          <!-- Lease period select box -->
+          <label class="label" for="lease-period">Lease Period(months):</label>
+          <select class="select" name="lease-period" id="lease-period" required>
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+            <option value="48">48</option>
+            <option value="60">60</option>
+          </select>
+          <!-- Down payment input and slider -->
+          <label class="label" for="down-payment">Down Payment(10%-50%):</label>
+          <input
+            class="input"
+            type="text"
+            name="down-payment"
+            id="down-payment-input"
+            value="15"
+            required
+            pattern="\d+"
+          />
+          <span id="down-payment-error" class="error-message"></span>
+          <input
+            type="range"
+            min="10"
+            max="50"
+            value="15"
+            id="down-payment-slider"
+            class="slider"
+          />
+        </div>
+      </form>
+      <hr />
+      <!-- Result container to display leasing details -->
+      <section class="result-container">
+        <h2 class="result-heading">Leasing Details</h2>
+        <div class="results-box">
+          <div class="left-col">
+            <span
+              >Total Leasing Cost: <span id="total-leasing-cost"></span
+            ></span>
+            <span>Down Payment: <span id="down-payment"></span></span>
+          </div>
+          <hr class="separator" />
+          <div class="right-col">
+            <span
+              >Monthly Installment: <span id="monthly-installment"></span
+            ></span>
+            <span>Interest Rate: <span id="interest-rate"></span></span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
