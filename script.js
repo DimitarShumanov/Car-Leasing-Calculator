@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const interestRate = carType === 'brand-new' ? 2.99 : 3.7;
     const P = carValue - downPayment;
     const r = (interestRate / 100) / 12
-    const monthlyInstallment = (P * r * Math.pow(1 + r, leasePeriod)) / (Math.pow(1 + r, l) - 1);
+    const monthlyInstallment = (P * r * Math.pow(1 + r, leasePeriod)) / (Math.pow(1 + r, leasePeriod) - 1);
     const totalLeasingCost = downPayment + (monthlyInstallment * leasePeriod);
 
     downPaymentSpan.textContent = `€${downPayment.toFixed(2)}`;
